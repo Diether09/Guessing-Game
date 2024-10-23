@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#1F2937]">
+    <div class="bg-[#3F4B62] flex flex-col w-[30%] m-auto mt-[15%] justify-center align-center text-center rounded-lg shadow-lg">
+        <h1 class="text-[50px] font-bold text-[#FFFFFF]">Guess the Number</h1>
+        <p class="text-[#E5E7EB]">Guess the number between 0 and 200.</p>
+        <p class="text-[#E5E7EB]">Place your bet and see if you win!</p>
+
+      
+        <div class="bg-[#4B5563] text-white p-4 rounded-lg mt-4">
+            <p class="font-semibold">Your Balance:</p>
+            <p id="balanceAmount" class="text-[24px]">$100</p>
+        </div>
+        
+        <input class="w-[70%] m-auto mt-4 rounded-lg p-2 bg-[#4B5563] border-2 border-[#3B82F6] focus:border-[#3B82F6] focus:outline-none" type="number" min="0" max="200" id="guess" placeholder="Enter your Guess">
+        
+        <input class="w-[70%] m-auto mt-4 rounded-lg p-2 bg-[#4B5563] border-2 border-[#3B82F6] focus:border-[#3B82F6] focus:outline-none" type="number" min="1" id="betAmount" placeholder="Enter your Bet">
+
+
+        <button id="submitButton" class="w-[70%] m-auto mt-6 bg-[#FBBF24] text-[#1F2937] font-bold py-2 rounded-lg hover:bg-[#EAB308] transition duration-300">
+            Submit
+        </button>
+        
+
+        <div class="bg-[#3B82F6] text-white mt-6 p-4 rounded-lg">
+            <p class="text-left font-semibold">Game Rules:</p>
+            <ul class="text-left list-disc ml-5">
+                <li>If you guess the exact number, you win 200 times your bet!</li>
+                <li>If your guess is within 5 numbers of the exact number, you win 20 times your bet.</li>
+                <li>If your guess is within 10 numbers of the exact number, you win 10 times your bet.</li>
+            </ul>
+        </div>
+
+        <div id="resultDisplay" class="bg-[#2F2F2F] text-white p-4 mt-4 rounded-lg">
+            <p id="resultMessage" class="font-semibold">Game Results:</p>
+            <p id="secretNumberDisplay" class="text-[20px]"></p>
+        </div>
+        
+    </div>
+
+
+    <div class="flex justify-center mt-4">
+        <button id="rechargeButton" class="bg-[#EF4444] text-white font-bold py-2 px-4 rounded-lg hover:bg-red-600 transition duration-300">
+            Recharge
+        </button>
+    </div>
+  
+    <script src="./Game.js"></script>
+</body>
+</html>
